@@ -1,0 +1,7 @@
+{
+  "name": "ChainGuard AI",
+  "description": "Supply Chain Attack Simulator & Defender powered by Gemini AI",
+  "version": "2.0.0",
+  "author": "ChainGuard Team",
+  "tags": ["security", "supply-chain", "ai", "gemini", "simulator"]
+}

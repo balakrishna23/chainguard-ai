@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased;
+    font-family: var(--font-display);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono, code, pre {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #10b98130;
+    color: #d1fae5;
+  }
+}
+
+@layer utilities {
+  /* Shimmer animation for hero text */
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .animate-\[shimmer_3s_ease_infinite\] {
+    animation: shimmer 3s ease infinite;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(63, 63, 70, 0.4);
+  }
+
+  /* Glow effects */
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+  }
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* D3 graph styles */
+.node circle {
+  transition: r 0.2s ease, stroke-width 0.2s ease;
+}
+.node:hover circle {
+  filter: brightness(1.2);
+}
+.edge {
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+/* Recharts customizations */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+.recharts-cartesian-axis-tick-value {
+  font-family: var(--font-mono);
+}
