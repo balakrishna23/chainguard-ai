@@ -121,5 +121,3 @@ npm run server
 ChainGuard AI is built to help security teams simulate supply chain attacks and defend software dependencies using AI-driven guidance. It combines interactive visual simulations, SBOM analysis, team collaboration, and a secure auth flow into a single tool.
 
 ---
-
-If you want, I can also add a shorter `README` version or a CONTRIBUTING section for this repo.
